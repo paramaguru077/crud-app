@@ -17,7 +17,7 @@ const EditPage = () => {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const response = await axios.get(`http://localhost:4000/update/${id}`);
+                const response = await axios.get(`https://crud-app-ng1o.onrender.com/update/${id}`);
                 const data = response.data[0];
                 setUser({
                     name: data.name,
@@ -39,7 +39,7 @@ const EditPage = () => {
     // Send the updated data to the server
     const sendData = async () => {
         try {
-            const response = await axios.put(`http://localhost:4000/update/${id}`, user);
+            const response = await axios.put(`https://crud-app-ng1o.onrender.com/update/${id}`, user);
             console.log(response);
         } catch (err) {
             console.log("Error:", err);

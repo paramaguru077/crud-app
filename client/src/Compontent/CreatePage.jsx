@@ -20,7 +20,7 @@ const CreatePage = () => {
   }
   const sendData = async()=>{
     try{
-      const response = await axios.post("http://localhost:4000/student",user);
+      const response = await axios.post("https://crud-app-ng1o.onrender.com/student",user);
       console.log(response);
 
 

@@ -3,7 +3,7 @@ import axios from 'axios';
 import {Link} from 'react-router-dom'
 
 const Home = () => {
-  const API = 'http://localhost:4000';
+  const API = 'https://crud-app-ng1o.onrender.com';
   const [data, setData] = useState([]);
 
   const fetchdata = async () => {
@@ -21,7 +21,7 @@ const Home = () => {
   }, []);
 
   const handleDelete = async(id)=>{
-    const response = await axios.delete(`http://localhost:4000/delete/${id}`);
+    const response = await axios.delete(`https://crud-app-ng1o.onrender.com/delete/${id}`);
     setData(data.filter(student => student.id!==id));
 
   }
