@@ -1,0 +1,61 @@
+/* ReadPage.css */
+
+.container-box {
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+   
+    max-width: 500px;
+    
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.titleh3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+}
+.btn-box{
+    display: flex;
+    justify-content: space-around;
+}
