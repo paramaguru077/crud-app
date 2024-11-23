@@ -1,16 +1,29 @@
-import express from 'express'
-import {router} from './Router/router.js'
+import express from 'express';
+import { router } from './Router/router.js';
+import cors from 'cors';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-import cors from 'cors'
-const PORT = 4000;
+// Required for ES Modules to resolve __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const PORT =  4000; // Use environment variable for port
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-app.use('/',router)
+// Serve React build files
+app.use(express.static(path.join(__dirname, 'client', 'dist')));
 
-app.listen(PORT ,(req,res)=>{
-    console.log(`http://localhost:${PORT}`);
+app.use('/', router);
+
+// Handle React routing (SPA)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
 });
 
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
+});
